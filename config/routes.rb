@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root 'index#show'
  	
   resources :cities
   # get 'gossips/new', to: 'gossips#new' #on affiche le formulaire
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :gossips do
   resources :comments
+  resources :likes
   end
 
   resources :sessions, only: [:new, :create, :destroy]
